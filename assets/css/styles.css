@@ -1285,14 +1285,10 @@ h5 { font-size: var(--text-lg); }
   transform: translateY(-3px);
 }
 
-.testimonial-card__quote-mark {
-  font-family: var(--serif);
-  font-size: 5rem;
-  line-height: 0.6;
+.testimonial-card__stars {
   color: var(--gold);
-  opacity: 0.3;
-  font-weight: 900;
-  pointer-events: none;
+  font-size: var(--text-sm);
+  letter-spacing: 2px;
 }
 
 .testimonial-card__text {
