@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hibbardlaws.com/sitemap.xml
+
+# Block staging/dev paths if added later
+Disallow: /dev/
+Disallow: /.netlify/
