@@ -28,7 +28,11 @@
       "Bash(xargs perl -i -0pe 's|\\(<li><a href=\"/blog/\">Monthly Updates</a></li>\\)\\\\n            <li><a href=\"/contact/\">Contact</a></li>|$1|g')",
       "Bash(grep -n 'Monthly Updates\\\\|href=\"/contact/\">Contact</a></li>' /Users/valnguyen/hibbard-law-redesign/__TRACKED_VAR__)",
       "Bash(perl -i -0pe 's|\\(<li><a href=\"/blog/\" class=\"active\">Monthly Updates</a></li>\\\\n\\)\\(\\\\s+</ul>\\)|${1}            <li><a href=\"/contact/\">Contact</a></li>\\\\n${2}|' /Users/valnguyen/hibbard-law-redesign/blog/index.html)",
-      "Bash(sed -n '48,58p' /Users/valnguyen/hibbard-law-redesign/blog/index.html)"
+      "Bash(sed -n '48,58p' /Users/valnguyen/hibbard-law-redesign/blog/index.html)",
+      "Bash(pkill -f \"http.server 8080\")",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(python3 -c \"import urllib.request; print\\(urllib.request.urlopen\\('http://localhost:8080/'\\).status\\)\")"
     ]
   }
 }
