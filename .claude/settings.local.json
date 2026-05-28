@@ -34,7 +34,16 @@
       "Bash(echo \"Server PID: $!\")",
       "Bash(python3 -c \"import urllib.request; print\\(urllib.request.urlopen\\('http://localhost:8080/'\\).status\\)\")",
       "Bash(gh api *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(pkill -f \"python3 -m http.server\")",
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(curl -s http://localhost:8080/attorneys/)",
+      "Bash(curl -s \"https://valbaowin.github.io/hibbard-law-redesign/assets/css/styles.css\")",
+      "Bash(curl -s \"https://valbaowin.github.io/hibbard-law-redesign/\")",
+      "Bash(curl -s \"https://valbaowin.github.io/hibbard-law-redesign/attorneys/\")",
+      "Bash(curl -sI \"https://valbaowin.github.io/hibbard-law-redesign/\")",
+      "Bash(curl -sI \"https://valbaowin.github.io/hibbard-law-redesign/assets/css/styles.css\")",
+      "Bash(xargs sed -i '' 's|styles\\\\.css\"|styles.css?v=4\"|g')"
     ]
   }
 }
