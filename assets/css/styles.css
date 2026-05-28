@@ -369,23 +369,25 @@ h5 { font-size: var(--text-lg); }
 .site-nav {
   display: flex;
   align-items: center;
-  gap: var(--sp-8);
+  gap: var(--sp-5);
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-4);
   list-style: none;
 }
 
 .nav-links a {
-  font-size: var(--text-sm);
+  font-size: 0.8rem;
   font-weight: 400;
   color: rgba(247,244,239,0.75);
   letter-spacing: 0.02em;
   position: relative;
   padding-block: var(--sp-1);
+  white-space: nowrap;
   transition: color var(--t-fast) ease;
 }
 
