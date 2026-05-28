@@ -337,7 +337,7 @@ h5 { font-size: var(--text-lg); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-8);
+  gap: var(--sp-6);
 }
 
 .site-header__logo {
@@ -369,13 +369,16 @@ h5 { font-size: var(--text-lg); }
 .site-nav {
   display: flex;
   align-items: center;
-  gap: var(--sp-8);
+  gap: var(--sp-6);
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-5);
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .nav-links a {
