@@ -32,7 +32,9 @@
       "Bash(pkill -f \"http.server 8080\")",
       "Bash(python3 -m http.server 8080)",
       "Bash(echo \"Server PID: $!\")",
-      "Bash(python3 -c \"import urllib.request; print\\(urllib.request.urlopen\\('http://localhost:8080/'\\).status\\)\")"
+      "Bash(python3 -c \"import urllib.request; print\\(urllib.request.urlopen\\('http://localhost:8080/'\\).status\\)\")",
+      "Bash(gh api *)",
+      "Bash(python3 *)"
     ]
   }
 }
