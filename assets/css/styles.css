@@ -161,24 +161,8 @@ input, textarea, select {
   transition: transform var(--t-fast) var(--ease-out), width var(--t-mid) var(--ease-out), height var(--t-mid) var(--ease-out);
 }
 
-.cursor__ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 50%;
-  position: absolute;
-  top: -18px;
-  left: -18px;
-  transition: transform var(--t-mid) var(--ease-out);
-}
-
 body.cursor--hover .cursor__dot {
   transform: scale(2.5);
-}
-
-body.cursor--hover .cursor__ring {
-  transform: scale(1.5);
-  border-color: rgba(255,255,255,0.3);
 }
 
 /* ── Typography ── */

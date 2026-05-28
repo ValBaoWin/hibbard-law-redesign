@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(gh repo *)",
+      "Bash(open *)",
+      "Bash(xargs sed -i '' 's|    <div class=\"cursor__ring\"></div>||g')"
+    ]
+  }
+}
