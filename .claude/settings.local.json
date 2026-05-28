@@ -7,7 +7,9 @@
       "Bash(git commit *)",
       "Bash(gh repo *)",
       "Bash(open *)",
-      "Bash(xargs sed -i '' 's|    <div class=\"cursor__ring\"></div>||g')"
+      "Bash(xargs sed -i '' 's|    <div class=\"cursor__ring\"></div>||g')",
+      "Bash(git push *)",
+      "Bash(xargs sed -i '' -e '/<script src=\"https:\\\\/\\\\/cdn.jsdelivr.net\\\\/npm\\\\/@studio-freight\\\\/lenis/d' -e '/<div class=\"cursor\" aria-hidden=\"true\">/,/<\\\\/div>/{ /cursor__dot/d; /<div class=\"cursor\"/d; /^[[:space:]]*<\\\\/div>[[:space:]]*$/{ /^$/d; }; }')"
     ]
   }
 }

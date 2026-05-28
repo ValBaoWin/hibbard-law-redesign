@@ -1,6 +1,6 @@
 /* ============================================================
    HIBBARD LAW GROUP — Main JS
-   GSAP + ScrollTrigger, Lenis smooth scroll, all interactions
+   GSAP + ScrollTrigger animations, all interactions
    ============================================================ */
 
 (function () {
@@ -9,65 +9,13 @@
   /* ── Reduced-motion check ── */
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Lenis smooth scroll ── */
-  let lenis;
-  if (!prefersReducedMotion) {
-    lenis = new Lenis({
-      duration: 1.6,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    /* Connect Lenis to GSAP ScrollTrigger */
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-    }
-  } else {
-    /* Even with reduced motion, still register ScrollTrigger for non-animated functionality */
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
+  /* ── Register GSAP ScrollTrigger ── */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
   }
 
-  /* ── Custom Cursor ── */
-  function initCursor() {
-    const cursor = document.querySelector('.cursor');
-    if (!cursor) return;
-    if (window.matchMedia('(hover: none)').matches) {
-      cursor.style.display = 'none';
-      return;
-    }
-
-    const dot = cursor.querySelector('.cursor__dot');
-    if (!dot) return;
-
-    document.addEventListener('mousemove', (e) => {
-      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    const hoverEls = document.querySelectorAll(
-      'a, button, .practice-card, .attorney-card, .blog-card, .accordion-trigger, [data-cursor-hover]'
-    );
-    hoverEls.forEach((el) => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor--hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor--hover'));
-    });
-  }
+  /* lenis is not used — native scroll only */
+  const lenis = null;
 
   /* ── Sticky Header ── */
   function initHeader() {
@@ -100,7 +48,7 @@
       mobileNav.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      if (lenis) lenis.stop();
+  
     }
 
     function closeNav() {
@@ -109,7 +57,7 @@
       mobileNav.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      if (lenis) lenis.start();
+  
     }
 
     hamburger.addEventListener('click', () => {
@@ -533,7 +481,6 @@
 
   /* ── Init all ── */
   function init() {
-    initCursor();
     initHeader();
     initMobileNav();
     initHeroAnimations();

@@ -107,12 +107,6 @@ body {
   color: var(--ink);
   background: var(--parchment);
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* Hide custom cursor on touch devices */
-@media (hover: none) {
-  body { cursor: auto; }
 }
 
 img, video {
@@ -141,29 +135,6 @@ input, textarea, select {
   font-family: inherit;
 }
 
-/* ── Custom Cursor ── */
-.cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: var(--z-cursor);
-  mix-blend-mode: difference;
-  transition: opacity var(--t-fast) ease;
-}
-
-.cursor__dot {
-  width: 8px;
-  height: 8px;
-  background: var(--white);
-  border-radius: 50%;
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  transition: transform var(--t-fast) var(--ease-out), width var(--t-mid) var(--ease-out), height var(--t-mid) var(--ease-out);
-}
-
-body.cursor--hover .cursor__dot {
-  transform: scale(2.5);
-}
 
 /* ── Typography ── */
 h1, h2, h3, h4, h5, h6 {
