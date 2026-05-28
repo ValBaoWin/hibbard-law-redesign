@@ -11,7 +11,24 @@
       "Bash(git push *)",
       "Bash(xargs sed -i '' -e '/<script src=\"https:\\\\/\\\\/cdn.jsdelivr.net\\\\/npm\\\\/@studio-freight\\\\/lenis/d' -e '/<div class=\"cursor\" aria-hidden=\"true\">/,/<\\\\/div>/{ /cursor__dot/d; /<div class=\"cursor\"/d; /^[[:space:]]*<\\\\/div>[[:space:]]*$/{ /^$/d; }; }')",
       "WebFetch(domain:valchiropractic.com)",
-      "Bash(xargs sed -i '' '/^  <div class=\"cursor\" aria-hidden=\"true\">/{ *)"
+      "Bash(xargs sed -i '' '/^  <div class=\"cursor\" aria-hidden=\"true\">/{ *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/attorneys/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/practice-areas/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/contact/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/blog/)",
+      "Bash(xargs sed -i '' 's|<li><a href=\"/blog/\">Monthly Updates</a></li>|<li><a href=\"/blog/\">Monthly Updates</a></li>\\\\n            <li><a href=\"/contact/\">Contact</a></li>|g')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/blog/what-to-do-after-car-accident/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/blog/noel-hibbard-top-100-trial-lawyer/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/blog/california-wrongful-death-statute-explained/)",
+      "Bash(xargs sed -i '' 's|<li><a href=\"/contact/\">Contact Us</a></li>.*<li><a href=\"/contact/\">Contact</a></li>|<li><a href=\"/contact/\">Contact</a></li>|g')",
+      "Bash(xargs sed -i '' '/^            <li><a href=\"\\\\/contact\\\\/\">Contact<\\\\/a><\\\\/li>$/{ *)",
+      "Bash(xargs sed -i '' 's|<li><a href=\"/blog/\">Monthly Updates</a></li>|<li><a href=\"/blog/\">Monthly Updates</a></li>\\\\n            <li><a href=\"/contact/\">Contact</a></li>|')",
+      "Bash(grep -c 'href=\"/contact/\">Contact</a></li>' /Users/valnguyen/hibbard-law-redesign/__TRACKED_VAR__)",
+      "Bash(xargs perl -i -0pe 's|\\(<li><a href=\"/blog/\">Monthly Updates</a></li>\\)\\\\n            <li><a href=\"/contact/\">Contact</a></li>|$1|g')",
+      "Bash(grep -n 'Monthly Updates\\\\|href=\"/contact/\">Contact</a></li>' /Users/valnguyen/hibbard-law-redesign/__TRACKED_VAR__)",
+      "Bash(perl -i -0pe 's|\\(<li><a href=\"/blog/\" class=\"active\">Monthly Updates</a></li>\\\\n\\)\\(\\\\s+</ul>\\)|${1}            <li><a href=\"/contact/\">Contact</a></li>\\\\n${2}|' /Users/valnguyen/hibbard-law-redesign/blog/index.html)",
+      "Bash(sed -n '48,58p' /Users/valnguyen/hibbard-law-redesign/blog/index.html)"
     ]
   }
 }
