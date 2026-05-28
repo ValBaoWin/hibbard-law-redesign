@@ -202,20 +202,6 @@
       );
     });
 
-    /* Parallax on hero background */
-    const heroBg = document.querySelector('.hero__bg-img');
-    if (heroBg) {
-      gsap.to(heroBg, {
-        yPercent: 25,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
-    }
 
     /* Pinned section label */
     const pinnedLabel = document.querySelector('.pinned-section-label');
@@ -380,11 +366,7 @@
         if (!target) return;
         e.preventDefault();
 
-        if (lenis) {
-          lenis.scrollTo(target, { offset: -80 });
-        } else {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }
@@ -445,38 +427,6 @@
     if (prefersReducedMotion) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-    /* About section image parallax */
-    const aboutImg = document.querySelector('.about__img-frame img');
-    if (aboutImg) {
-      gsap.to(aboutImg, {
-        yPercent: -8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.about',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1.5,
-        },
-      });
-    }
-
-    /* Stats number entrance */
-    const statsSection = document.querySelector('.stats-band');
-    if (statsSection) {
-      gsap.fromTo(statsSection,
-        { backgroundPositionX: '0%' },
-        {
-          backgroundPositionX: '100%',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: statsSection,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 2,
-          },
-        }
-      );
-    }
   }
 
   /* ── Init all ── */
